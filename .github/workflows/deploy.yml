@@ -14,5 +14,8 @@ jobs:
           node-version: '16.11.0'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: npm install
-      - run: npm run deploy
+      - run: |
+          git config --local user.email "$(git log --format='%ae' HEAD^!)"
+          git config --local user.name "$(git log --format='%an' HEAD^!)"
+          npm install
+          npm run deploy
