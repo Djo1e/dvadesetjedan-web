@@ -8,14 +8,17 @@
     "start": "next start",
     "lint": "next lint",
     "export": "next export",
-    "deploy": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages"
+    "deploy": "git push origin :gh-pages && rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages"
   },
   "dependencies": {
+    "@headlessui/react": "^1.6.4",
+    "date-fns": "^2.28.0",
     "gray-matter": "^4.0.3",
     "next": "12.1.6",
     "raw-loader": "^4.0.2",
     "react": "18.1.0",
     "react-dom": "18.1.0",
+    "react-h5-audio-player": "^3.8.4",
     "react-markdown": "^8.0.3"
   },
   "devDependencies": {

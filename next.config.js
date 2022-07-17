@@ -10,4 +10,7 @@ module.exports = {
     return config;
   },
   assetPrefix: !debug ? "./" : "",
+  images: {
+    domains: ["d3t3ozftmdmh3i.cloudfront.net"],
+  },
 };
